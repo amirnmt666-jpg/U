@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>YouTube PWA Player</title>
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#202020">
+
+    <style>
+        body {
+            font-family: sans-serif;
+            background: #111;
+            color: white;
+            margin: 0;
+            padding: 20px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            margin-bottom: 15px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: crimson;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+        }
+        #player {
+            margin-top: 20px;
+        }
+    </style>
+
+</head>
+<body>
+
+<h2>YouTube PWA Player</h2>
+
+<input id="urlInput" placeholder="لینک یوتیوب را وارد کنید...">
+<button onclick="loadVideo()">پخش</button>
+
+<div id="player"></div>
+
+<script src="script.js"></script>
+
+<!-- سرویس‌ورکر -->
+<script>
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js');
+}
+</script>
+
+</body>
+</html>
